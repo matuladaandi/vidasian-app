@@ -1,5 +1,5 @@
 import Link from "next/link";
-import style from "./Register.module.scss";
+import styles from "./Register.module.scss";
 import { useRouter } from "next/router";
 import { FormEvent, useState } from "react";
 
@@ -41,57 +41,57 @@ const RegisterView = () => {
   };
 
   return (
-    <div className={style.register}>
-      <h1 className={style.register__title}>Register</h1>
-      {error && <p className={style.register__error}>{error}</p>}
-      <div className={style.register__form}>
+    <div className={styles.register}>
+      <h1 className={styles.register__title}>Register</h1>
+      {error && <p className={styles.register__error}>{error}</p>}
+      <div className={styles.register__form}>
         <form onSubmit={handleSubmit}>
-          <div className={style.register__form__item}>
+          <div className={styles.register__form__item}>
             <label htmlFor="fullname">Full Name</label>
             <input
               name="fullname"
               type="text"
               id="fullname"
-              className={style.register__form__item__input}
+              className={styles.register__form__item__input}
             />
           </div>
 
-          <div className={style.register__form__item}>
+          <div className={styles.register__form__item}>
             <label htmlFor="email">Email</label>
             <input
               name="email"
               type="email"
               id="email"
-              className={style.register__form__item__input}
+              className={styles.register__form__item__input}
             />
           </div>
 
-          <div className={style.register__form__item}>
+          <div className={styles.register__form__item}>
             <label htmlFor="phone">Phone</label>
             <input
               name="phone"
               type="text"
               id="phone"
-              className={style.register__form__item__input}
+              className={styles.register__form__item__input}
             />
           </div>
 
-          <div className={style.register__form__item}>
+          <div className={styles.register__form__item}>
             <label htmlFor="password">Password</label>
             <input
               name="password"
               type="password"
               id="password"
-              className={style.register__form__item__input}
+              className={styles.register__form__item__input}
             />
           </div>
 
-          <button type="submit" className={style.register__form__button}>
+          <button type="submit" className={styles.register__form__button}>
             {isLoading ? "Loading..." : "Register"}
           </button>
         </form>
       </div>
-      <p className={style.register__link}>
+      <p className={styles.register__link}>
         Have an account? Sign in <Link href="/auth/login">here</Link>
       </p>
     </div>
