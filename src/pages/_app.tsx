@@ -1,13 +1,20 @@
+import Navbar from "@/components/layouts/navbar";
 import "@/styles/globals.css";
+import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
 import { Lato } from "next/font/google";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   return (
-    // font lato
-    <div className={lato.className}>
-      <Component {...pageProps} />
-    </div>
+    <SessionProvider session={session}>
+      <div className={lato.className}>
+        <Navbar />
+        <Component {...pageProps} />
+      </div>
+    </SessionProvider>
   );
 }
 
